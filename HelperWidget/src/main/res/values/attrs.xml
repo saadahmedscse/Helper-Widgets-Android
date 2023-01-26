@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TextView">
+        //Colors
+        <attr name="textColor" format="color"/>
+        <attr name="rippleColor" format="color"/>
+        <attr name="backgroundColor" format="color"/>
+
+        //Clickable
+        <attr name="clickable" format="enum">
+            <enum name="disable" value="0"/>
+            <enum name="enable" value="1"/>
+        </attr>
+
+        //Font
+        <attr name="fontType" format="enum">
+            <enum name="regular" value="0"/>
+            <enum name="medium" value="1"/>
+            <enum name="bold" value="2"/>
+        </attr>
+
+        //Corner Radius
+        <attr name="cornerRadius" format="dimension"/>
+        <attr name="topLeftCornerRadius" format="dimension"/>
+        <attr name="topRightCornerRadius" format="dimension"/>
+        <attr name="bottomRightCornerRadius" format="dimension"/>
+        <attr name="bottomLeftCornerRadius" format="dimension"/>
+    </declare-styleable>
+</resources>
