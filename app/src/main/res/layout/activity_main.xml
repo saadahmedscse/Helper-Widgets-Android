@@ -16,10 +16,12 @@
         android:layout_height="50dp"
         android:layout_margin="25dp"
         android:gravity="center"
-        app:fontType="medium"
+        app:fontType="regular"
         app:topLeftCornerRadius="25dp"
         app:rippleColor="#fff000"
         app:backgroundColor="@color/white"
         android:text="Hello"/>
+
+<!--  HAVE TO PUT DEFAULT FONT SIZE FROM SSP  <-->
 
 </LinearLayout>
