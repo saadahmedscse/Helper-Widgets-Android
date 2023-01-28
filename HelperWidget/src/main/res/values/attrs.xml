@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="TextView">
         //Colors
-        <attr name="textColor" format="color"/>
+        <attr name="android:textColor" format="color"/>
         <attr name="rippleColor" format="color"/>
         <attr name="backgroundColor" format="color"/>
         <attr name="strokeColor" format="color"/>
@@ -32,7 +32,7 @@
         </attr>
 
         //Font
-        <attr name="fontType" format="enum">
+        <attr name="fontFam" format="enum">
             <enum name="regular" value="0"/>
             <enum name="medium" value="1"/>
             <enum name="bold" value="2"/>
