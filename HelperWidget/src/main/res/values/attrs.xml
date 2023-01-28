@@ -1,54 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    //Colors
+    <attr name="fontColor" format="color"/>
+    <attr name="rippleColor" format="color"/>
+    <attr name="backgroundColor" format="color"/>
+    <attr name="strokeColor" format="color"/>
+
+    //Shape
+    <attr name="shape" format="enum">
+        <enum name="rounded5dp" value="0"/>
+        <enum name="rounded10dp" value="1"/>
+        <enum name="rounded15dp" value="2"/>
+        <enum name="rounded20dp" value="3"/>
+        <enum name="rounded25dp" value="4"/>
+        <enum name="rounded30dp" value="5"/>
+        <enum name="rounded35dp" value="6"/>
+        <enum name="rounded40dp" value="7"/>
+        <enum name="rounded45dp" value="8"/>
+        <enum name="rounded50dp" value="9"/>
+        <enum name="oval" value="10"/>
+        <enum name="ring" value="11"/>
+        <enum name="normal" value="12"/>
+    </attr>
+    <attr name="strokeWidth" format="dimension"/>
+
+    //Clickable
+    <attr name="clickable" format="enum">
+        <enum name="disable" value="0"/>
+        <enum name="enable" value="1"/>
+    </attr>
+
+    //Font
+    <attr name="fontFam" format="enum">
+        <enum name="regular" value="0"/>
+        <enum name="medium" value="1"/>
+        <enum name="bold" value="2"/>
+    </attr>
+
+    //Padding and Margin
+    <attr name="horizontalPadding" format="dimension"/>
+    <attr name="verticalPadding" format="dimension"/>
+    <attr name="horizontalMargin" format="dimension"/>
+    <attr name="verticalMargin" format="dimension"/>
+
+    //Corner Radius
+    <attr name="cornerRadius" format="dimension"/>
+    <attr name="topLeftCornerRadius" format="dimension"/>
+    <attr name="topRightCornerRadius" format="dimension"/>
+    <attr name="bottomRightCornerRadius" format="dimension"/>
+    <attr name="bottomLeftCornerRadius" format="dimension"/>
+
     <declare-styleable name="TextView">
         //Colors
-        <attr name="android:textColor" format="color"/>
-        <attr name="rippleColor" format="color"/>
-        <attr name="backgroundColor" format="color"/>
-        <attr name="strokeColor" format="color"/>
+        <attr name="fontColor"/>
+        <attr name="rippleColor"/>
+        <attr name="backgroundColor"/>
+        <attr name="strokeColor"/>
 
         //Shape
-        <attr name="shape" format="enum">
-            <enum name="rounded5dp" value="0"/>
-            <enum name="rounded10dp" value="1"/>
-            <enum name="rounded15dp" value="2"/>
-            <enum name="rounded20dp" value="3"/>
-            <enum name="rounded25dp" value="4"/>
-            <enum name="rounded30dp" value="5"/>
-            <enum name="rounded35dp" value="6"/>
-            <enum name="rounded40dp" value="7"/>
-            <enum name="rounded45dp" value="8"/>
-            <enum name="rounded50dp" value="9"/>
-            <enum name="oval" value="10"/>
-            <enum name="ring" value="11"/>
-            <enum name="normal" value="12"/>
-        </attr>
-        <attr name="strokeWidth" format="dimension"/>
+        <attr name="shape"/>
+        <attr name="strokeWidth"/>
 
         //Clickable
-        <attr name="clickable" format="enum">
-            <enum name="disable" value="0"/>
-            <enum name="enable" value="1"/>
-        </attr>
+        <attr name="clickable"/>
 
         //Font
-        <attr name="fontFam" format="enum">
-            <enum name="regular" value="0"/>
-            <enum name="medium" value="1"/>
-            <enum name="bold" value="2"/>
-        </attr>
+        <attr name="fontFam"/>
 
         //Padding and Margin
-        <attr name="horizontalPadding" format="dimension"/>
-        <attr name="verticalPadding" format="dimension"/>
-        <attr name="horizontalMargin" format="dimension"/>
-        <attr name="verticalMargin" format="dimension"/>
+        <attr name="horizontalPadding"/>
+        <attr name="verticalPadding"/>
+        <attr name="horizontalMargin"/>
+        <attr name="verticalMargin"/>
 
         //Corner Radius
-        <attr name="cornerRadius" format="dimension"/>
-        <attr name="topLeftCornerRadius" format="dimension"/>
-        <attr name="topRightCornerRadius" format="dimension"/>
-        <attr name="bottomRightCornerRadius" format="dimension"/>
-        <attr name="bottomLeftCornerRadius" format="dimension"/>
+        <attr name="cornerRadius"/>
+        <attr name="topLeftCornerRadius"/>
+        <attr name="topRightCornerRadius"/>
+        <attr name="bottomRightCornerRadius"/>
+        <attr name="bottomLeftCornerRadius"/>
+    </declare-styleable>
+
+    <declare-styleable name="EditText">
+        //Colors
+        <attr name="fontColor"/>
+        <attr name="rippleColor"/>
+        <attr name="backgroundColor"/>
+        <attr name="strokeColor"/>
+
+        //Shape
+        <attr name="shape"/>
+        <attr name="strokeWidth"/>
+
+        //Clickable
+        <attr name="clickable"/>
+
+        //Font
+        <attr name="fontFam"/>
+
+        //Padding and Margin
+        <attr name="horizontalPadding"/>
+        <attr name="verticalPadding"/>
+        <attr name="horizontalMargin"/>
+        <attr name="verticalMargin"/>
+
+        //Corner Radius
+        <attr name="cornerRadius"/>
+        <attr name="topLeftCornerRadius"/>
+        <attr name="topRightCornerRadius"/>
+        <attr name="bottomRightCornerRadius"/>
+        <attr name="bottomLeftCornerRadius"/>
     </declare-styleable>
 </resources>

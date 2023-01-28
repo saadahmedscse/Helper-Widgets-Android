@@ -16,21 +16,22 @@ import com.saadahmedev.helperwidget.utils.Colors;
 import com.saadahmedev.helperwidget.utils.FontFamily;
 import com.saadahmedev.helperwidget.utils.FontUtil;
 
-public class TextView extends androidx.appcompat.widget.AppCompatTextView {
+import java.util.Objects;
 
-    public TextView(@NonNull Context context) {
+public class EditText extends androidx.appcompat.widget.AppCompatEditText {
+    public EditText(@NonNull Context context) {
         super(context);
 
         init(context, null, 0);
     }
 
-    public TextView(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public EditText(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         init(context, attrs, 0);
     }
 
-    public TextView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public EditText(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         init(context, attrs, defStyleAttr);
@@ -39,55 +40,55 @@ public class TextView extends androidx.appcompat.widget.AppCompatTextView {
     @NonNull
     private static int[] cornerRadiusIds() {
         return new int[]{
-                R.styleable.TextView_cornerRadius,
-                R.styleable.TextView_topLeftCornerRadius,
-                R.styleable.TextView_topRightCornerRadius,
-                R.styleable.TextView_bottomRightCornerRadius,
-                R.styleable.TextView_bottomLeftCornerRadius,
+                R.styleable.EditText_cornerRadius,
+                R.styleable.EditText_topLeftCornerRadius,
+                R.styleable.EditText_topRightCornerRadius,
+                R.styleable.EditText_bottomRightCornerRadius,
+                R.styleable.EditText_bottomLeftCornerRadius,
         };
     }
 
     @NonNull
     private static int[] paddingAndMarginIds() {
         return new int[]{
-                R.styleable.TextView_horizontalPadding,
-                R.styleable.TextView_verticalPadding,
-                R.styleable.TextView_horizontalMargin,
-                R.styleable.TextView_verticalMargin
+                R.styleable.EditText_horizontalPadding,
+                R.styleable.EditText_verticalPadding,
+                R.styleable.EditText_horizontalMargin,
+                R.styleable.EditText_verticalMargin
         };
     }
 
     @NonNull
     private static int[] colorIds() {
         return new int[]{
-                R.styleable.TextView_backgroundColor,
-                R.styleable.TextView_rippleColor
+                R.styleable.EditText_backgroundColor,
+                R.styleable.EditText_rippleColor
         };
     }
 
     @NonNull
     private static int[] strokeIds() {
         return new int[]{
-                R.styleable.TextView_strokeWidth,
-                R.styleable.TextView_strokeColor
+                R.styleable.EditText_strokeWidth,
+                R.styleable.EditText_strokeColor
         };
     }
 
     private void init(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TextView, defStyleAttr, 0);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.EditText, defStyleAttr, 0);
         Helper.initView(this, context, typedArray, new GradientDrawable());
 
         Helper.initDefaultColors(colorIds());
         Helper.initDefaultCornerRadius(cornerRadiusIds());
-        Helper.initDefaultClickable(R.styleable.TextView_clickable);
-        Helper.initDefaultShape(R.styleable.TextView_shape);
+        Helper.initDefaultClickable(R.styleable.EditText_clickable);
+        Helper.initDefaultShape(R.styleable.EditText_shape);
         Helper.initDefaultStroke(strokeIds());
         Helper.initPaddingAndMargin(paddingAndMarginIds());
 
-        int textColor = typedArray.getColor(R.styleable.TextView_fontColor, ColorUtil.parseColor(Colors.COLOR_DARK_GRAY));
+        int textColor = typedArray.getColor(R.styleable.EditText_fontColor, ColorUtil.parseColor(Colors.COLOR_DARK_GRAY));
         this.setTextColor(textColor);
 
-        FontFamily fontFamily = FontFamily.values()[typedArray.getInt(R.styleable.TextView_fontFam, 0)];
+        FontFamily fontFamily = FontFamily.values()[typedArray.getInt(R.styleable.EditText_fontFam, 0)];
         Typeface typeface = Typeface.createFromAsset(context.getAssets(), new FontUtil().getFont(fontFamily));
         this.setTypeface(typeface);
 
@@ -96,11 +97,11 @@ public class TextView extends androidx.appcompat.widget.AppCompatTextView {
     }
 
     public String getStringValue() {
-        return this.getText().toString();
+        return Objects.requireNonNull(this.getText()).toString();
     }
 
     public String getTrimmedStringValue() {
-        return this.getText().toString().trim();
+        return this.getStringValue().trim();
     }
 
     public int getIntValue() { return Integer.parseInt(this.getStringValue()); }

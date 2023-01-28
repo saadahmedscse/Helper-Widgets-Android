@@ -105,6 +105,7 @@ public class Helper {
                 shape.setStroke(strokeWidth.intValue(), strokeColor);
                 break;
             }
+            case NORMAL: break;
             default:
                 shape.setCornerRadius(dimenUtil.floatToDp(ShapeUtil.create().getShape(viewShape)));
         }
