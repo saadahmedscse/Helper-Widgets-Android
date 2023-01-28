@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/layout"
-    android:background="@color/black"
+    android:background="@color/white"
     android:gravity="center"
     tools:context=".MainActivity">
 
     <com.saadahmedev.helperwidget.widgets.TextView
         android:id="@+id/tv_custom"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_margin="25dp"
         android:gravity="center"
-        app:fontType="bold"
-        app:rippleColor="#fff000"
-        app:backgroundColor="@color/teal_200"
+        app:shape="rounded25dp"
+        app:fontFam="medium"
+        app:backgroundColor="@color/teal_700"
         android:text="Hello"/>
 
 <!--  HAVE TO PUT DEFAULT FONT SIZE FROM SSP  <-->
