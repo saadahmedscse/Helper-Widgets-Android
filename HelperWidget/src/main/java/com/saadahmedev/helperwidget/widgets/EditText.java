@@ -14,9 +14,7 @@ import com.saadahmedev.helperwidget.Helper;
 import com.saadahmedev.helperwidget.R;
 import com.saadahmedev.helperwidget.utils.ColorUtil;
 import com.saadahmedev.helperwidget.utils.Colors;
-import com.saadahmedev.helperwidget.utils.Countries;
 import com.saadahmedev.helperwidget.utils.FontFamily;
-import com.saadahmedev.helperwidget.utils.PhoneValidationUtil;
 
 import java.util.Objects;
 import java.util.regex.Pattern;
@@ -147,10 +145,5 @@ public class EditText extends androidx.appcompat.widget.AppCompatEditText {
 
     public boolean isValidEmail() {
         return Pattern.matches(String.valueOf(Patterns.EMAIL_ADDRESS), getStringValue());
-    }
-
-    public boolean isValidPhone(Countries country) {
-        PhoneValidationUtil.setPhone(getStringValue());
-        return PhoneValidationUtil.isValidPhone(country);
     }
 }
