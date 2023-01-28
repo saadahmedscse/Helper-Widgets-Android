@@ -38,6 +38,12 @@
             <enum name="bold" value="2"/>
         </attr>
 
+        //Padding and Margin
+        <attr name="horizontalPadding" format="dimension"/>
+        <attr name="verticalPadding" format="dimension"/>
+        <attr name="horizontalMargin" format="dimension"/>
+        <attr name="verticalMargin" format="dimension"/>
+
         //Corner Radius
         <attr name="cornerRadius" format="dimension"/>
         <attr name="topLeftCornerRadius" format="dimension"/>

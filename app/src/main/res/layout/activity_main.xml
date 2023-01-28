@@ -12,14 +12,16 @@
 
     <com.saadahmedev.helperwidget.widgets.TextView
         android:id="@+id/tv_custom"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         app:shape="rounded25dp"
+        app:horizontalPadding="25dp"
+        app:verticalPadding="10dp"
+        app:horizontalMargin="20dp"
         app:fontFam="medium"
         app:backgroundColor="@color/teal_700"
-        android:text="Hello"/>
+        android:text="sdf dsfsdfsdfsdfsdf"/>
 
 <!--  HAVE TO PUT DEFAULT FONT SIZE FROM SSP  <-->
 
