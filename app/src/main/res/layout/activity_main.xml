@@ -10,19 +10,21 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <com.saadahmedev.helperwidget.widgets.ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/dummy_image"
-        app:strokeColor="@color/black"
-        app:shape="rounded50dp"/>
-
     <com.saadahmedev.helperwidget.widgets.View
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="15dp"
         app:backgroundColor="@color/black"
         app:cornerRadius="50dp"/>
+
+    <com.saadahmedev.helperwidget.widgets.LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        app:strokeWidth="5dp"
+        app:strokeColor="@color/black"
+        app:shape="rounded50dp"
+        app:rippleColor="@color/white"/>
 
 <!--  HAVE TO PUT DEFAULT FONT SIZE FROM SSP  <-->
 
