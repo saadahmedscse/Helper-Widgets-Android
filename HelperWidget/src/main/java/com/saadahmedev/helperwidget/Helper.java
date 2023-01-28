@@ -18,7 +18,6 @@ import com.saadahmedev.helperwidget.utils.ColorUtil;
 import com.saadahmedev.helperwidget.utils.Colors;
 import com.saadahmedev.helperwidget.utils.DimenUtil;
 import com.saadahmedev.helperwidget.utils.Shape;
-import com.saadahmedev.helperwidget.utils.ShapeUtil;
 
 public class Helper {
 
@@ -107,7 +106,7 @@ public class Helper {
             }
             case NORMAL: break;
             default:
-                shape.setCornerRadius(dimenUtil.floatToDp(ShapeUtil.create().getShape(viewShape)));
+                shape.setCornerRadius(dimenUtil.floatToDp(viewShape.getValue()));
         }
     }
 

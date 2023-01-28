@@ -14,7 +14,6 @@ import com.saadahmedev.helperwidget.R;
 import com.saadahmedev.helperwidget.utils.ColorUtil;
 import com.saadahmedev.helperwidget.utils.Colors;
 import com.saadahmedev.helperwidget.utils.FontFamily;
-import com.saadahmedev.helperwidget.utils.FontUtil;
 
 public class TextView extends androidx.appcompat.widget.AppCompatTextView {
 
@@ -88,7 +87,7 @@ public class TextView extends androidx.appcompat.widget.AppCompatTextView {
         this.setTextColor(textColor);
 
         FontFamily fontFamily = FontFamily.values()[typedArray.getInt(R.styleable.TextView_fontFam, 0)];
-        Typeface typeface = Typeface.createFromAsset(context.getAssets(), new FontUtil().getFont(fontFamily));
+        Typeface typeface = Typeface.createFromAsset(context.getAssets(), fontFamily.getValue());
         this.setTypeface(typeface);
 
         Helper.completeView();
@@ -100,18 +99,28 @@ public class TextView extends androidx.appcompat.widget.AppCompatTextView {
     }
 
     public String getTrimmedStringValue() {
-        return this.getText().toString().trim();
+        return getStringValue().trim();
     }
 
-    public int getIntValue() { return Integer.parseInt(this.getStringValue()); }
+    public int getIntValue() {
+        return Integer.parseInt(getStringValue());
+    }
 
-    public double getDoubleValue() { return Double.parseDouble(this.getStringValue()); }
+    public double getDoubleValue() {
+        return Double.parseDouble(getStringValue());
+    }
 
-    public float getFloatValue() { return Float.parseFloat(this.getStringValue()); }
+    public float getFloatValue() {
+        return Float.parseFloat(getStringValue());
+    }
 
-    public short getShortValue() { return Short.parseShort(this.getStringValue()); }
+    public short getShortValue() {
+        return Short.parseShort(getStringValue());
+    }
 
-    public boolean getBooleanValue() { return Boolean.parseBoolean(this.getStringValue()); }
+    public boolean getBooleanValue() {
+        return Boolean.parseBoolean(getStringValue());
+    }
 
     public void enable() {
         Helper.enable();

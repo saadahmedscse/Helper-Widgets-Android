@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
+import android.util.Patterns;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,10 +14,12 @@ import com.saadahmedev.helperwidget.Helper;
 import com.saadahmedev.helperwidget.R;
 import com.saadahmedev.helperwidget.utils.ColorUtil;
 import com.saadahmedev.helperwidget.utils.Colors;
+import com.saadahmedev.helperwidget.utils.Countries;
 import com.saadahmedev.helperwidget.utils.FontFamily;
-import com.saadahmedev.helperwidget.utils.FontUtil;
+import com.saadahmedev.helperwidget.utils.PhoneValidationUtil;
 
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 public class EditText extends androidx.appcompat.widget.AppCompatEditText {
     public EditText(@NonNull Context context) {
@@ -89,7 +92,7 @@ public class EditText extends androidx.appcompat.widget.AppCompatEditText {
         this.setTextColor(textColor);
 
         FontFamily fontFamily = FontFamily.values()[typedArray.getInt(R.styleable.EditText_fontFam, 0)];
-        Typeface typeface = Typeface.createFromAsset(context.getAssets(), new FontUtil().getFont(fontFamily));
+        Typeface typeface = Typeface.createFromAsset(context.getAssets(), fontFamily.getValue());
         this.setTypeface(typeface);
 
         Helper.completeView();
@@ -101,18 +104,18 @@ public class EditText extends androidx.appcompat.widget.AppCompatEditText {
     }
 
     public String getTrimmedStringValue() {
-        return this.getStringValue().trim();
+        return getStringValue().trim();
     }
 
-    public int getIntValue() { return Integer.parseInt(this.getStringValue()); }
+    public int getIntValue() { return Integer.parseInt(getStringValue()); }
 
-    public double getDoubleValue() { return Double.parseDouble(this.getStringValue()); }
+    public double getDoubleValue() { return Double.parseDouble(getStringValue()); }
 
-    public float getFloatValue() { return Float.parseFloat(this.getStringValue()); }
+    public float getFloatValue() { return Float.parseFloat(getStringValue()); }
 
-    public short getShortValue() { return Short.parseShort(this.getStringValue()); }
+    public short getShortValue() { return Short.parseShort(getStringValue()); }
 
-    public boolean getBooleanValue() { return Boolean.parseBoolean(this.getStringValue()); }
+    public boolean getBooleanValue() { return Boolean.parseBoolean(getStringValue()); }
 
     public void enable() {
         Helper.enable();
@@ -132,5 +135,22 @@ public class EditText extends androidx.appcompat.widget.AppCompatEditText {
 
     public void gone() {
         Helper.gone();
+    }
+
+    public boolean isEmpty() {
+        return getStringValue().isEmpty();
+    }
+
+    public boolean isNotEmpty() {
+        return !isEmpty();
+    }
+
+    public boolean isValidEmail() {
+        return Pattern.matches(String.valueOf(Patterns.EMAIL_ADDRESS), getStringValue());
+    }
+
+    public boolean isValidPhone(Countries country) {
+        PhoneValidationUtil.setPhone(getStringValue());
+        return PhoneValidationUtil.isValidPhone(country);
     }
 }
