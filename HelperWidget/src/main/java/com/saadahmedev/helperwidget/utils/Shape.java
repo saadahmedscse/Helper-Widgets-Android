@@ -12,5 +12,6 @@ public enum Shape {
     ROUNDED_45DP,
     ROUNDED_50DP,
     OVAL,
+    RING,
     NORMAL
 }

@@ -20,7 +20,8 @@
             <enum name="rounded45dp" value="8"/>
             <enum name="rounded50dp" value="9"/>
             <enum name="oval" value="10"/>
-            <enum name="normal" value="11"/>
+            <enum name="ring" value="11"/>
+            <enum name="normal" value="12"/>
         </attr>
         <attr name="strokeWidth" format="dimension"/>
 

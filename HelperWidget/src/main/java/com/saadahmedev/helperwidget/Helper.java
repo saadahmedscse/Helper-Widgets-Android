@@ -16,6 +16,8 @@ import android.view.View;
 import androidx.annotation.NonNull;
 
 import com.saadahmedev.helperwidget.utils.Clickable;
+import com.saadahmedev.helperwidget.utils.ColorUtil;
+import com.saadahmedev.helperwidget.utils.Colors;
 import com.saadahmedev.helperwidget.utils.Shape;
 
 public class Helper {
@@ -24,6 +26,7 @@ public class Helper {
     @SuppressLint("StaticFieldLeak")
     private static View view;
     private static TypedArray typedArray;
+    @SuppressLint("StaticFieldLeak")
     private static Context context;
 
     //Colors
@@ -41,6 +44,12 @@ public class Helper {
     Float bottomRightCornerRadius = 0.0f;
     private static @NonNull
     Float bottomLeftCornerRadius = 0.0f;
+
+    //Stroke
+    private static @NonNull
+    Float strokeWidth = 2F;
+    private static @NonNull
+    Integer strokeColor = ColorUtil.parseColor(Colors.COLOR_DARK_GRAY);
 
     public static void initView(View view, Context context, TypedArray typedArray, GradientDrawable shape) {
         Helper.view = view;
@@ -82,11 +91,17 @@ public class Helper {
     }
 
     public static void initDefaultShape(int attrId) {
-        Shape viewShape = Shape.values()[typedArray.getInt(attrId, 11)];
+        Shape viewShape = Shape.values()[typedArray.getInt(attrId, 12)];
         switch (viewShape) {
             case OVAL:
                 shape.setShape(GradientDrawable.OVAL);
                 break;
+            case RING: {
+                shape.setShape(GradientDrawable.OVAL);
+                shape.setColor(Color.TRANSPARENT);
+                shape.setStroke(strokeWidth.intValue(), strokeColor);
+                break;
+            }
             case ROUNDED_5DP:
                 shape.setCornerRadius(floatToDp(5F));
                 break;
@@ -120,13 +135,15 @@ public class Helper {
         }
     }
 
-    private static float floatToDp(float value){
+    private static float floatToDp(float value) {
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,  value, metrics);
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, metrics);
     }
 
     public static void initDefaultStroke(int[] attrIds) {
-        //
+        strokeWidth = typedArray.getDimension(attrIds[0], 0);
+        strokeColor = typedArray.getColor(attrIds[1], 0);
+        shape.setStroke(strokeWidth.intValue(), strokeColor);
     }
 
     private static RippleDrawable getRippleDrawable(Drawable drawable) {

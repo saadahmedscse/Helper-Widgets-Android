@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import com.saadahmedev.helperwidget.Helper;
 import com.saadahmedev.helperwidget.R;
 import com.saadahmedev.helperwidget.utils.Clickable;
+import com.saadahmedev.helperwidget.utils.ColorUtil;
 import com.saadahmedev.helperwidget.utils.Colors;
 import com.saadahmedev.helperwidget.utils.FontStyle;
 
@@ -73,7 +74,7 @@ public class TextView extends androidx.appcompat.widget.AppCompatTextView {
         Helper.initDefaultShape(R.styleable.TextView_shape);
         Helper.initDefaultStroke(strokeIds());
 
-        int textColor = typedArray.getColor(R.styleable.TextView_textColor, parseColor(Colors.COLOR_DARK_GRAY));
+        int textColor = typedArray.getColor(R.styleable.TextView_textColor, ColorUtil.parseColor(Colors.COLOR_DARK_GRAY));
         this.setTextColor(textColor);
 
         FontStyle fontStyle = FontStyle.values()[typedArray.getInt(R.styleable.TextView_fontType, 0)];
@@ -134,9 +135,5 @@ public class TextView extends androidx.appcompat.widget.AppCompatTextView {
 
     public void gone() {
         Helper.gone();
-    }
-
-    private int parseColor(String hex) {
-        return Color.parseColor(hex);
     }
 }
