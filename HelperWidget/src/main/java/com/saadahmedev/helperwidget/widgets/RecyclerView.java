@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.saadahmedev.helperwidget.Helper;
 import com.saadahmedev.helperwidget.R;
 import com.saadahmedev.helperwidget.interfaces.OnLongPressListener;
-import com.saadahmedev.helperwidget.utils.LayoutManager;
 
 public class RecyclerView extends androidx.recyclerview.widget.RecyclerView {
     public RecyclerView(@NonNull Context context) {
