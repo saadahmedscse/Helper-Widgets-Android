@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 
 import com.saadahmedev.helperwidget.Helper;
 import com.saadahmedev.helperwidget.R;
+import com.saadahmedev.helperwidget.interfaces.OnLongPressListener;
 import com.saadahmedev.helperwidget.utils.ColorUtil;
 import com.saadahmedev.helperwidget.utils.Colors;
 import com.saadahmedev.helperwidget.utils.FontFamily;
@@ -129,5 +130,13 @@ public class TextView extends androidx.appcompat.widget.AppCompatTextView {
 
     public void gone() {
         Helper.gone();
+    }
+
+    public void onClicked(com.saadahmedev.helperwidget.interfaces.OnClickListener listener) {
+        Helper.onClicked(listener);
+    }
+
+    public void onLongPressed(OnLongPressListener listener) {
+        Helper.onLongPressed(listener);
     }
 }

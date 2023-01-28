@@ -13,6 +13,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
+import com.saadahmedev.helperwidget.interfaces.OnClickListener;
+import com.saadahmedev.helperwidget.interfaces.OnLongPressListener;
 import com.saadahmedev.helperwidget.utils.Clickable;
 import com.saadahmedev.helperwidget.utils.ColorUtil;
 import com.saadahmedev.helperwidget.utils.Colors;
@@ -161,5 +163,16 @@ public class Helper {
 
     public static void gone() {
         view.setVisibility(View.GONE);
+    }
+
+    public static void onClicked(OnClickListener listener) {
+        view.setOnClickListener(listener::onClicked);
+    }
+
+    public static void onLongPressed(OnLongPressListener listener) {
+        view.setOnLongClickListener(v -> {
+            listener.onLongPressed(v);
+            return true;
+        });
     }
 }

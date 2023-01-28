@@ -10,29 +10,14 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <com.saadahmedev.helperwidget.widgets.TextView
-        android:id="@+id/tv_custom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:shape="rounded25dp"
-        app:fontFam="medium"
-        app:backgroundColor="@color/teal_700"
-        android:text="sdf dsfsdfsdfsdfsdf"/>
-
-    <com.saadahmedev.helperwidget.widgets.EditText
-        android:id="@+id/et"
+    <com.saadahmedev.helperwidget.widgets.View
+        android:id="@+id/custom_view"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        app:strokeColor="@color/teal_700"
-        app:strokeWidth="3dp"
-        app:cornerRadius="25dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:hint="Enter here"
-        app:fontFam="regular"
-        app:fontColor="#ff0000"/>
+        android:layout_height="65dp"
+        app:backgroundColor="#ff0000"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
+        app:cornerRadius="15dp"/>
 
 <!--  HAVE TO PUT DEFAULT FONT SIZE FROM SSP  <-->
 
