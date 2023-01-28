@@ -116,25 +116,6 @@ public class Helper {
         shape.setStroke(strokeWidth.intValue(), strokeColor);
     }
 
-    public static void initPaddingAndMargin(int[] attrIds) {
-        //Padding and Margins
-        Float horizontalPadding = typedArray.getDimension(attrIds[0], 0F);
-        Float verticalPadding = typedArray.getDimension(attrIds[1], 0F);
-        Float horizontalMargin = typedArray.getDimension(attrIds[2], 0F);
-        Float verticalMargin = typedArray.getDimension(attrIds[3], 0F);
-
-        if (!horizontalPadding.equals(0F) || !verticalPadding.equals(0F)) {
-            view.setPadding(horizontalPadding.intValue(), verticalPadding.intValue(), horizontalPadding.intValue(), verticalPadding.intValue());
-        }
-
-//        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//        params.setMargins(horizontalMargin.intValue(), verticalMargin.intValue(), horizontalMargin.intValue(), verticalMargin.intValue());
-//
-//        if (!horizontalMargin.equals(0F) || !verticalMargin.equals(0F)) {
-//            view.setLayoutParams(params);
-//        }
-    }
-
     private static RippleDrawable getRippleDrawable(Drawable drawable) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             return new RippleDrawable(getPressedState(), drawable, null);

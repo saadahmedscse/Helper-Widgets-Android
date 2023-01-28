@@ -47,16 +47,6 @@ public class TextView extends androidx.appcompat.widget.AppCompatTextView {
     }
 
     @NonNull
-    private static int[] paddingAndMarginIds() {
-        return new int[]{
-                R.styleable.TextView_horizontalPadding,
-                R.styleable.TextView_verticalPadding,
-                R.styleable.TextView_horizontalMargin,
-                R.styleable.TextView_verticalMargin
-        };
-    }
-
-    @NonNull
     private static int[] colorIds() {
         return new int[]{
                 R.styleable.TextView_backgroundColor,
@@ -81,7 +71,6 @@ public class TextView extends androidx.appcompat.widget.AppCompatTextView {
         Helper.initDefaultClickable(R.styleable.TextView_clickable);
         Helper.initDefaultShape(R.styleable.TextView_shape);
         Helper.initDefaultStroke(strokeIds());
-        Helper.initPaddingAndMargin(paddingAndMarginIds());
 
         int textColor = typedArray.getColor(R.styleable.TextView_fontColor, ColorUtil.parseColor(Colors.COLOR_DARK_GRAY));
         this.setTextColor(textColor);

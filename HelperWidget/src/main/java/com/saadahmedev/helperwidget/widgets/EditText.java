@@ -50,16 +50,6 @@ public class EditText extends androidx.appcompat.widget.AppCompatEditText {
     }
 
     @NonNull
-    private static int[] paddingAndMarginIds() {
-        return new int[]{
-                R.styleable.EditText_horizontalPadding,
-                R.styleable.EditText_verticalPadding,
-                R.styleable.EditText_horizontalMargin,
-                R.styleable.EditText_verticalMargin
-        };
-    }
-
-    @NonNull
     private static int[] colorIds() {
         return new int[]{
                 R.styleable.EditText_backgroundColor,
@@ -84,7 +74,6 @@ public class EditText extends androidx.appcompat.widget.AppCompatEditText {
         Helper.initDefaultClickable(R.styleable.EditText_clickable);
         Helper.initDefaultShape(R.styleable.EditText_shape);
         Helper.initDefaultStroke(strokeIds());
-        Helper.initPaddingAndMargin(paddingAndMarginIds());
 
         int textColor = typedArray.getColor(R.styleable.EditText_fontColor, ColorUtil.parseColor(Colors.COLOR_DARK_GRAY));
         this.setTextColor(textColor);
