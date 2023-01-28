@@ -195,4 +195,32 @@
         <attr name="bottomRightCornerRadius"/>
         <attr name="bottomLeftCornerRadius"/>
     </declare-styleable>
+
+    <declare-styleable name="RecyclerView">
+        //Colors
+        <attr name="rippleColor"/>
+        <attr name="backgroundColor"/>
+        <attr name="strokeColor"/>
+
+        //Shape
+        <attr name="shape"/>
+        <attr name="strokeWidth"/>
+
+        //Clickable
+        <attr name="clickable"/>
+
+        //Layout Manager
+        <attr name="setupLayoutManager" format="enum">
+            <enum name="linearLayoutManager" value="0"/>
+            <enum name="gridLayoutManager" value="1"/>
+        </attr>
+        <attr name="gridCount" format="integer"/>
+
+        //Corner Radius
+        <attr name="cornerRadius"/>
+        <attr name="topLeftCornerRadius"/>
+        <attr name="topRightCornerRadius"/>
+        <attr name="bottomRightCornerRadius"/>
+        <attr name="bottomLeftCornerRadius"/>
+    </declare-styleable>
 </resources>
