@@ -196,6 +196,11 @@
         <attr name="bottomLeftCornerRadius"/>
     </declare-styleable>
 
+    <attr name="setupLayoutManager" format="enum">
+        <enum name="linearLayoutManager" value="0"/>
+        <enum name="gridLayoutManager" value="1"/>
+    </attr>
+
     <declare-styleable name="RecyclerView">
         //Colors
         <attr name="rippleColor"/>
@@ -210,10 +215,7 @@
         <attr name="clickable"/>
 
         //Layout Manager
-        <attr name="setupLayoutManager" format="enum">
-            <enum name="linearLayoutManager" value="0"/>
-            <enum name="gridLayoutManager" value="1"/>
-        </attr>
+        <attr name="setupLayoutManager"/>
         <attr name="gridCount" format="integer"/>
 
         //Corner Radius
