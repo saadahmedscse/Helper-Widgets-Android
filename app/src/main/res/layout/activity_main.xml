@@ -17,13 +17,12 @@
         app:backgroundColor="@color/black"
         app:cornerRadius="50dp"/>
 
-    <com.saadahmedev.helperwidget.widgets.RelativeLayout
+    <com.saadahmedev.helperwidget.widgets.ConstraintLayout
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="10dp"
         app:backgroundColor="@color/black"
-        app:shape="rounded50dp"
-        app:rippleColor="@color/white"/>
+        app:shape="rounded50dp"/>
 
 <!--  HAVE TO PUT DEFAULT FONT SIZE FROM SSP  <-->
 
