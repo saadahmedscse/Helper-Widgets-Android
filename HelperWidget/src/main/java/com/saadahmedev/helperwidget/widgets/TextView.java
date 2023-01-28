@@ -55,13 +55,23 @@ public class TextView extends androidx.appcompat.widget.AppCompatTextView {
         };
     }
 
+    @NonNull
+    private static int[] strokeIds() {
+        return new int[]{
+                R.styleable.TextView_strokeWidth,
+                R.styleable.TextView_strokeColor
+        };
+    }
+
     private void init(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TextView, defStyleAttr, 0);
-        Helper.initView(this, typedArray, new GradientDrawable());
+        Helper.initView(this, context, typedArray, new GradientDrawable());
 
         Helper.initDefaultColors(colorIds());
         Helper.initDefaultCornerRadius(cornerRadiusIds());
         Helper.initDefaultClickable(R.styleable.TextView_clickable);
+        Helper.initDefaultShape(R.styleable.TextView_shape);
+        Helper.initDefaultStroke(strokeIds());
 
         int textColor = typedArray.getColor(R.styleable.TextView_textColor, parseColor(Colors.COLOR_DARK_GRAY));
         this.setTextColor(textColor);

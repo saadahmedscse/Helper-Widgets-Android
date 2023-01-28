@@ -5,6 +5,24 @@
         <attr name="textColor" format="color"/>
         <attr name="rippleColor" format="color"/>
         <attr name="backgroundColor" format="color"/>
+        <attr name="strokeColor" format="color"/>
+
+        //Shape
+        <attr name="shape" format="enum">
+            <enum name="rounded5dp" value="0"/>
+            <enum name="rounded10dp" value="1"/>
+            <enum name="rounded15dp" value="2"/>
+            <enum name="rounded20dp" value="3"/>
+            <enum name="rounded25dp" value="4"/>
+            <enum name="rounded30dp" value="5"/>
+            <enum name="rounded35dp" value="6"/>
+            <enum name="rounded40dp" value="7"/>
+            <enum name="rounded45dp" value="8"/>
+            <enum name="rounded50dp" value="9"/>
+            <enum name="oval" value="10"/>
+            <enum name="normal" value="11"/>
+        </attr>
+        <attr name="strokeWidth" format="dimension"/>
 
         //Clickable
         <attr name="clickable" format="enum">
