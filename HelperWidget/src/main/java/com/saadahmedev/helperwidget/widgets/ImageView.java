@@ -11,21 +11,26 @@ import androidx.annotation.Nullable;
 import com.saadahmedev.helperwidget.Helper;
 import com.saadahmedev.helperwidget.R;
 import com.saadahmedev.helperwidget.interfaces.OnLongPressListener;
+import com.saadahmedev.helperwidget.utils.DimenUtil;
+import com.saadahmedev.helperwidget.utils.ImageUtil;
+import com.saadahmedev.helperwidget.utils.Shape;
 
-public class View extends android.view.View {
-    public View(Context context) {
+public class ImageView extends androidx.appcompat.widget.AppCompatImageView {
+    private DimenUtil dimenUtil;
+
+    public ImageView(Context context) {
         super(context);
 
         init(context, null, 0);
     }
 
-    public View(Context context, @Nullable AttributeSet attrs) {
+    public ImageView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         init(context, attrs, 0);
     }
 
-    public View(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ImageView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         init(context, attrs, defStyleAttr);
@@ -34,42 +39,58 @@ public class View extends android.view.View {
     @NonNull
     private static int[] cornerRadiusIds() {
         return new int[]{
-                R.styleable.View_cornerRadius,
-                R.styleable.View_topLeftCornerRadius,
-                R.styleable.View_topRightCornerRadius,
-                R.styleable.View_bottomRightCornerRadius,
-                R.styleable.View_bottomLeftCornerRadius,
+                R.styleable.ImageView_cornerRadius
         };
     }
 
     @NonNull
     private static int[] colorIds() {
         return new int[]{
-                R.styleable.View_backgroundColor,
-                R.styleable.View_rippleColor
+                R.styleable.ImageView_backgroundColor,
+                R.styleable.ImageView_rippleColor
         };
     }
 
     @NonNull
     private static int[] strokeIds() {
         return new int[]{
-                R.styleable.View_strokeWidth,
-                R.styleable.View_strokeColor
+                R.styleable.ImageView_strokeWidth,
+                R.styleable.ImageView_strokeColor
         };
     }
 
     private void init(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.View, defStyleAttr, 0);
+        dimenUtil = DimenUtil.getInstance(context);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ImageView, defStyleAttr, 0);
         Helper.initView(this, context, typedArray, new GradientDrawable());
 
         Helper.initDefaultColors(colorIds());
         Helper.initDefaultCornerRadius(cornerRadiusIds());
-        Helper.initDefaultClickable(R.styleable.View_clickable);
-        Helper.initDefaultShape(R.styleable.View_shape);
+        Helper.initDefaultClickable(R.styleable.ImageView_clickable);
         Helper.initDefaultStroke(strokeIds());
+        setImageRounded(dimenUtil.floatToDp(typedArray.getDimension(cornerRadiusIds()[0], 0F)), false);
+        initDefaultShape(typedArray);
 
         Helper.completeView();
         typedArray.recycle();
+    }
+
+    private void initDefaultShape(TypedArray typedArray) {
+        Shape viewShape = Shape.values()[typedArray.getInt(R.styleable.ImageView_shape, 12)];
+        switch (viewShape) {
+            case OVAL:
+                setImageRounded(0F, true);
+                break;
+            case RING:
+            case NORMAL:
+                break;
+            default:
+                setImageRounded(dimenUtil.floatToDp(dimenUtil.floatToDp(viewShape.getValue())), false);
+        }
+    }
+
+    private void setImageRounded(float dp, boolean isOval) {
+        this.setImageBitmap(ImageUtil.getRoundedCornerBitmap(ImageUtil.getBitmap(this), dp, isOval));
     }
 
     public void enable() {

@@ -28,13 +28,5 @@ public class MainActivity extends AppCompatActivity {
 //        LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 //        p.setMargins(15,15,15,15);
 //        layout.setLayoutParams(p);
-
-        View view = findViewById(R.id.custom_view);
-
-        view.onClicked(v -> {
-            //
-        });
-
-        view.onLongPressed(v -> {});
     }
 }

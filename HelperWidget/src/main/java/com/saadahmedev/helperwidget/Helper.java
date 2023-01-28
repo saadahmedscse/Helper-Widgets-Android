@@ -20,6 +20,7 @@ import com.saadahmedev.helperwidget.utils.ColorUtil;
 import com.saadahmedev.helperwidget.utils.Colors;
 import com.saadahmedev.helperwidget.utils.DimenUtil;
 import com.saadahmedev.helperwidget.utils.Shape;
+import com.saadahmedev.helperwidget.widgets.ImageView;
 
 public class Helper {
 
@@ -63,11 +64,13 @@ public class Helper {
     }
 
     public static void initDefaultCornerRadius(int[] attrIds) {
+        if (!(view instanceof ImageView)) {
+            topLeftCornerRadius = typedArray.getDimension(attrIds[1], 0.0f);
+            topRightCornerRadius = typedArray.getDimension(attrIds[2], 0.0f);
+            bottomRightCornerRadius = typedArray.getDimension(attrIds[3], 0.0f);
+            bottomLeftCornerRadius = typedArray.getDimension(attrIds[4], 0.0f);
+        }
         cornerRadius = typedArray.getDimension(attrIds[0], 0.0f);
-        topLeftCornerRadius = typedArray.getDimension(attrIds[1], 0.0f);
-        topRightCornerRadius = typedArray.getDimension(attrIds[2], 0.0f);
-        bottomRightCornerRadius = typedArray.getDimension(attrIds[3], 0.0f);
-        bottomLeftCornerRadius = typedArray.getDimension(attrIds[4], 0.0f);
 
         Helper.setRadius();
     }
@@ -116,6 +119,10 @@ public class Helper {
         strokeWidth = typedArray.getDimension(attrIds[0], 0);
         strokeColor = typedArray.getColor(attrIds[1], 0);
         shape.setStroke(strokeWidth.intValue(), strokeColor);
+
+        if (view instanceof ImageView) {
+            view.setPadding(strokeWidth.intValue(), strokeWidth.intValue(), strokeWidth.intValue(), strokeWidth.intValue());
+        }
     }
 
     private static RippleDrawable getRippleDrawable(Drawable drawable) {

@@ -115,4 +115,21 @@
         <attr name="bottomRightCornerRadius"/>
         <attr name="bottomLeftCornerRadius"/>
     </declare-styleable>
+
+    <declare-styleable name="ImageView">
+        //Colors
+        <attr name="rippleColor"/>
+        <attr name="backgroundColor"/>
+        <attr name="strokeColor"/>
+
+        //Shape
+        <attr name="shape"/>
+        <attr name="strokeWidth"/>
+
+        //Clickable
+        <attr name="clickable"/>
+
+        //Corner Radius
+        <attr name="cornerRadius"/>
+    </declare-styleable>
 </resources>
