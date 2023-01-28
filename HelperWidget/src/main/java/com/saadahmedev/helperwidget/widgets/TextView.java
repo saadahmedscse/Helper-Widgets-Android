@@ -2,23 +2,22 @@ package com.saadahmedev.helperwidget.widgets;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.saadahmedev.helperwidget.Helper;
 import com.saadahmedev.helperwidget.R;
-import com.saadahmedev.helperwidget.utils.Clickable;
 import com.saadahmedev.helperwidget.utils.ColorUtil;
 import com.saadahmedev.helperwidget.utils.Colors;
-import com.saadahmedev.helperwidget.utils.FontStyle;
+import com.saadahmedev.helperwidget.utils.FontFamily;
+import com.saadahmedev.helperwidget.utils.FontUtil;
 
 public class TextView extends androidx.appcompat.widget.AppCompatTextView {
+
     public TextView(@NonNull Context context) {
         super(context);
 
@@ -74,25 +73,11 @@ public class TextView extends androidx.appcompat.widget.AppCompatTextView {
         Helper.initDefaultShape(R.styleable.TextView_shape);
         Helper.initDefaultStroke(strokeIds());
 
-        int textColor = typedArray.getColor(R.styleable.TextView_textColor, ColorUtil.parseColor(Colors.COLOR_DARK_GRAY));
+        int textColor = typedArray.getColor(R.styleable.TextView_android_textColor, ColorUtil.parseColor(Colors.COLOR_DARK_GRAY));
         this.setTextColor(textColor);
 
-        FontStyle fontStyle = FontStyle.values()[typedArray.getInt(R.styleable.TextView_fontType, 0)];
-        Typeface typeface = Typeface.createFromAsset(context.getAssets(), "regular.ttf");
-        switch (fontStyle) {
-            case BOLD: {
-                typeface = Typeface.createFromAsset(context.getAssets(), "bold.ttf");
-                break;
-            }
-            case MEDIUM: {
-                typeface = Typeface.createFromAsset(context.getAssets(), "medium.ttf");
-                break;
-            }
-            case REGULAR: {
-                typeface = Typeface.createFromAsset(context.getAssets(), "regular.ttf");
-                break;
-            }
-        }
+        FontFamily fontFamily = FontFamily.values()[typedArray.getInt(R.styleable.TextView_fontFam, 0)];
+        Typeface typeface = Typeface.createFromAsset(context.getAssets(), new FontUtil().getFont(fontFamily));
         this.setTypeface(typeface);
 
         Helper.completeView();
