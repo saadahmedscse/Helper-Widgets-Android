@@ -9,8 +9,6 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -18,7 +16,9 @@ import androidx.annotation.NonNull;
 import com.saadahmedev.helperwidget.utils.Clickable;
 import com.saadahmedev.helperwidget.utils.ColorUtil;
 import com.saadahmedev.helperwidget.utils.Colors;
+import com.saadahmedev.helperwidget.utils.DimenUtil;
 import com.saadahmedev.helperwidget.utils.Shape;
+import com.saadahmedev.helperwidget.utils.ShapeUtil;
 
 public class Helper {
 
@@ -102,42 +102,8 @@ public class Helper {
                 shape.setStroke(strokeWidth.intValue(), strokeColor);
                 break;
             }
-            case ROUNDED_5DP:
-                shape.setCornerRadius(floatToDp(5F));
-                break;
-            case ROUNDED_10DP:
-                shape.setCornerRadius(floatToDp(10F));
-                break;
-            case ROUNDED_15DP:
-                shape.setCornerRadius(floatToDp(15F));
-                break;
-            case ROUNDED_20DP:
-                shape.setCornerRadius(floatToDp(20F));
-                break;
-            case ROUNDED_25DP:
-                shape.setCornerRadius(floatToDp(25F));
-                break;
-            case ROUNDED_30DP:
-                shape.setCornerRadius(floatToDp(30F));
-                break;
-            case ROUNDED_35DP:
-                shape.setCornerRadius(floatToDp(35F));
-                break;
-            case ROUNDED_40DP:
-                shape.setCornerRadius(floatToDp(40F));
-                break;
-            case ROUNDED_45DP:
-                shape.setCornerRadius(floatToDp(45F));
-                break;
-            case ROUNDED_50DP:
-                shape.setCornerRadius(floatToDp(50));
-                break;
+            default: shape.setCornerRadius(DimenUtil.floatToDp(context, ShapeUtil.create().getShape(viewShape)));
         }
-    }
-
-    private static float floatToDp(float value) {
-        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, metrics);
     }
 
     public static void initDefaultStroke(int[] attrIds) {
