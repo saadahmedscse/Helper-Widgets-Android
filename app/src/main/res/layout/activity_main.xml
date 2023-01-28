@@ -24,6 +24,7 @@
         android:text="sdf dsfsdfsdfsdfsdf"/>
 
     <com.saadahmedev.helperwidget.widgets.EditText
+        android:id="@+id/et"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
