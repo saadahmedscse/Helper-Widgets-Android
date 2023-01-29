@@ -6,12 +6,18 @@
 <a href="[https://github.com/rrsaikat/CodeChallengeByShikho/graphs/traffic](https://github.com/saadahmedscse/shortintent/graphs/traffic)"><img alt="Total Views" src="https://img.shields.io/badge/Views-312-brightgreen"/></a>
 
 # Android Helper Widgets
-Getting tired by designing a lot of XML Drawable files, importing library for modification? Android Helper Widget is a lightweight and easy to use Android library that provides you a lot of attributes to create any kind of design in your root XML file. You don't have to create ab XML drawable file. You can easily design anything in XML layout file with the attributes I've provided.
+
+Getting tired by designing a lot of XML Drawable files, importing library for modification? Android
+Helper Widget is a lightweight and easy to use Android library that provides you a lot of attributes
+to create any kind of design in your root XML file. You don't have to create ab XML drawable file.
+You can easily design anything in XML layout file with the attributes I've provided.
+
 * Min SDK 16 (Android Alpha 1.0)
 * Written in Java
 * Compatible for both Java and Kotlin
 
 ## Features
+
 * Custom View
 * Custom ImageView
 * Custom TextView
@@ -24,6 +30,7 @@ Getting tired by designing a lot of XML Drawable files, importing library for mo
 ## Installation
 
 Add the dependency to your module build.gradle:
+
 ```groovy
 dependencies {
     ...
@@ -74,6 +81,9 @@ dependencies {
 |`isValidEmail()`| :x: | :x: | :x: | :white_check_mark: | :x: | :x: | :x: | :x:|
 
 ### fontFam
-|    Enums    |        Font Name        |                                View                         |
-| ----------- | ----------------------- | :---------------------------------------------------------: |
-|  `regular`  |      Roboto Regular     | <img src="HelperWidget/demo/roboto_regular.png" width="420px"/> |
+
+| Enums     | Font Name      |                              View                               |
+|-----------|----------------|:---------------------------------------------------------------:|
+| `regular` | Roboto Regular | <img src="HelperWidget/demo/roboto_regular.png" width="420px"/> |
+| `medium`  | Roboto Medium  | <img src="HelperWidget/demo/roboto_medium.png" width="420px"/>  |
+| `bold`    | Roboto Bold    |  <img src="HelperWidget/demo/roboto_bold.png" width="420px"/>   |
