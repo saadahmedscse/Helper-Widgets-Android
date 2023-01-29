@@ -50,3 +50,25 @@ dependencies {
 |topRightCornerRadius| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:|
 |bottomRightCornerRadius| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:|
 |bottomLeftCornerRadius| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:|
+|setupLayoutManager| :x: | :x: | :x: | :x: | :x: | :x: | :x: | :white_check_mark:|
+|gridCount| :x: | :x: | :x: | :x: | :x: | :x: | :x: | :white_check_mark:|
+
+### Functions
+
+|  Functions  | View               |  ImageView  |  TextView  |  EditText  |  LinearLayout  |  RelativeLayout  |  ConstraintLayout  |  RecyclerView  |
+| ----------- | ------------------ | ----------- | ---------- | ---------- | -------------- | ---------------- | ------------------ | -------------- |
+|getStringValue()| :x: | :x: | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :x:|
+|getTrimmedStringValue()| :x: | :x: | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :x:|
+|getIntValue()| :x: | :x: | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :x:|
+|getDoubleValue()| :x: | :x: | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :x:|
+|getFloatValue()| :x: | :x: | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :x:|
+|getShortValue()| :x: | :x: | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :x:|
+|getBooleanValue()| :x: | :x: | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :x:|
+|enable()| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:|
+|disable()| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:|
+|visible()| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:|
+|invisible()| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:|
+|gone()| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:|
+|onClicked()| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:|
+|onLongPressed()| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:|
+|isValidEmail()| :x: | :x: | :x: | :white_check_mark: | :x: | :x: | :x: | :x:|
