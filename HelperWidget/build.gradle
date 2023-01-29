@@ -1,17 +1,27 @@
 plugins {
     id 'com.android.library'
+    id 'maven-publish'
+    id 'signing'
 }
 
 android {
-    namespace 'com.saadahmedev.helperwidget'
+    namespace 'com.saadahmedsoft.popupdialog'
     compileSdk 33
 
     defaultConfig {
-        minSdk 16
+        minSdk 21
         targetSdk 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+    }
+
+    publishing {
+        singleVariant("release") {
+            // if you don't want sources/javadoc, remove these lines
+            withSourcesJar()
+            withJavadocJar()
+        }
     }
 
     buildTypes {
@@ -26,11 +36,67 @@ android {
     }
 }
 
-dependencies {
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "sources"
+}
 
+def artifactVersion = "1.0.0-SNAPSHOT"
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.saadahmedev.helper-widget'
+            artifactId 'helper-widget'
+            version artifactVersion
+            artifact(sourceJar)
+            artifact("$buildDir/outputs/aar/helperWidget-release.aar")
+
+            pom {
+                name = 'Android Helper Widgets'
+                description = 'A custom widget library that provides you a lot of in build designing attributes'
+                url = 'https://github.com/saadahmedscse/Helper-Widgets-Android'
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'saadahmedscse'
+                        name = 'Saad Ahmed'
+                        email = 'saadahmedscse@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/saadahmedscse/Helper-Widgets-Android.git'
+                    developerConnection = 'scm:git:ssh://github.com:saadahmedscse/Helper-Widgets-Android.git'
+                    url = 'https://github.com/saadahmedscse/Helper-Widgets-Android'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            def releaseUrl = "https://s01.oss.sonatype.org/content/repositories/releases/"
+            def snapshotUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+            url = artifactVersion.endsWith('SNAPSHOT') ? snapshotUrl : releaseUrl
+
+            credentials {
+                username("username")
+                password("password")
+            }
+        }
+    }
+}
+
+dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.0'
-    implementation 'com.google.android.material:material:1.7.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'com.google.android.material:material:1.8.0'
+}
+
+signing {
+    sign configurations.archives
 }
