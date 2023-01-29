@@ -87,3 +87,21 @@ dependencies {
 | `regular` | Roboto Regular | <img src="HelperWidget/demo/roboto_regular.png" width="420px"/> |
 | `medium`  | Roboto Medium  | <img src="HelperWidget/demo/roboto_medium.png" width="420px"/>  |
 | `bold`    | Roboto Bold    |  <img src="HelperWidget/demo/roboto_bold.png" width="420px"/>   |
+
+### shape
+
+| Enums         |                             View                             |
+|---------------|:------------------------------------------------------------:|
+| `normal`      |   <img src="HelperWidget/demo/normal.png" width="420px"/>    |
+| `oval`        |    <img src="HelperWidget/demo/ring.png" width="420px"/>     |
+| `ring`        |    <img src="HelperWidget/demo/ring.png" width="420px"/>     |
+| `rounded5dp`  | <img src="HelperWidget/demo/rounded5dp.png" width="420px"/>  |
+| `rounded10dp` | <img src="HelperWidget/demo/rounded10dp.png" width="420px"/> |
+| `rounded15dp` | <img src="HelperWidget/demo/rounded15dp.png" width="420px"/> |
+| `rounded20dp` | <img src="HelperWidget/demo/rounded20dp.png" width="420px"/> |
+| `rounded25dp` | <img src="HelperWidget/demo/rounded25dp.png" width="420px"/> |
+| `rounded30dp` | <img src="HelperWidget/demo/rounded30dp.png" width="420px"/> |
+| `rounded35dp` | <img src="HelperWidget/demo/rounded35dp.png" width="420px"/> |
+| `rounded40dp` | <img src="HelperWidget/demo/rounded40dp.png" width="420px"/> |
+| `rounded45dp` | <img src="HelperWidget/demo/rounded45dp.png" width="420px"/> |
+| `rounded50dp` | <img src="HelperWidget/demo/rounded50dp.png" width="420px"/> |
