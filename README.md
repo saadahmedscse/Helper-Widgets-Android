@@ -93,7 +93,7 @@ dependencies {
 | Enums         |                             View                             |
 |---------------|:------------------------------------------------------------:|
 | `normal`      |   <img src="HelperWidget/demo/normal.png" width="420px"/>    |
-| `oval`        |    <img src="HelperWidget/demo/ring.png" height="80px"/>     |
+| `oval`        |    <img src="HelperWidget/demo/oval.png" height="80px"/>     |
 | `ring`        |    <img src="HelperWidget/demo/ring.png" height="80px"/>     |
 | `rounded5dp`  | <img src="HelperWidget/demo/rounded5dp.png" width="420px"/>  |
 | `rounded10dp` | <img src="HelperWidget/demo/rounded10dp.png" width="420px"/> |
