@@ -72,3 +72,8 @@ dependencies {
 |`onClicked()`| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:|
 |`onLongPressed()`| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:|
 |`isValidEmail()`| :x: | :x: | :x: | :white_check_mark: | :x: | :x: | :x: | :x:|
+
+### fontFam
+|    Enums    |        Font Name        |                                View                         |
+| ----------- | ----------------------- | :---------------------------------------------------------: |
+|  `regular`  |      Roboto Regular     | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png"/> |
