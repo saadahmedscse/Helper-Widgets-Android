@@ -76,4 +76,4 @@ dependencies {
 ### fontFam
 |    Enums    |        Font Name        |                                View                         |
 | ----------- | ----------------------- | :---------------------------------------------------------: |
-|  `regular`  |      Roboto Regular     | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png"/> |
+|  `regular`  |      Roboto Regular     | <img src="HelperWidget/demo/roboto_regular.png" width="420px"/> |
