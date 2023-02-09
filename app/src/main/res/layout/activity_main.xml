@@ -10,19 +10,10 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <com.saadahmedev.helperwidget.widgets.View
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="15dp"
-        app:backgroundColor="@color/black"
-        app:cornerRadius="50dp"/>
-
-    <com.saadahmedev.helperwidget.widgets.RecyclerView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:backgroundColor="@color/teal_200"
-        android:layout_marginTop="10dp"
-        app:gridCount="5"/>
+    <com.saadahmedev.helperwidget.widgets.Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundColor="@color/black"/>
 
 <!--  HAVE TO PUT DEFAULT FONT SIZE FROM SSP  <-->
 
